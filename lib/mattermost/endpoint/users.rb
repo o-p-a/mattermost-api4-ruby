@@ -66,7 +66,7 @@ module Mattermost
 			end
 
 			def update_user_roles(user_id, roles)
-				put("/users/#{user_id}/roles", roles)
+				put("/users/#{user_id}/roles", :body => roles.to_json)
 			end
 
 			def update_user_active_status(user_id, active)
@@ -107,7 +107,7 @@ module Mattermost
 			def update_user_mfa(user_id, activate, code = nil)
 				params = {:activate => activate}
 				params[:code] = code if code != nil
-				put("/users/#{user_id}/mfa", params.to_json)
+				put("/users/#{user_id}/mfa", :body => params.to_json)
 			end
 
 			def generate_mfa_secret(user_id)

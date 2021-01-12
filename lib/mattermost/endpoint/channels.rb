@@ -24,7 +24,7 @@ module Mattermost
 			end
 
 			def update_channel(channel_id, channel = {})
-				put("/channels/#{channel_id}", channel.to_json)
+				put("/channels/#{channel_id}", :body => channel.to_json)
 			end
 
 			def delete_channel(channel_id)
@@ -32,7 +32,7 @@ module Mattermost
 			end
 
 			def patch_channel(channel_id, patch = {})
-				put("/channels/#{channel_id}/patch", patch.to_json)
+				put("/channels/#{channel_id}/patch", :body => patch.to_json)
 			end
 
 			def restore_channel(channel_id)
@@ -92,7 +92,7 @@ module Mattermost
 			end
 
 			def update_channel_notifications(channel_id, user_id, notify_props = {})
-				put("/channels/#{channel_id}/members/#{user_id}/notify_props", notify_props.to_json)
+				put("/channels/#{channel_id}/members/#{user_id}/notify_props", :body => notify_props.to_json)
 			end
 
 			def view_channel(user_id, channel_id, prev_channel_id)
