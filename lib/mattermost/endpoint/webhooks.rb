@@ -49,7 +49,7 @@ module Mattermost
 			end
 
 			def update_outgoing_webhook(hook_id, outgoing_webhook)
-				put("/hooks/outgoing/#{hook_id}", outgoing_webhook.to_json)
+				put("/hooks/outgoing/#{hook_id}", :body => outgoing_webhook.to_json)
 			end
 
 			def regenerate_outgoing_webhook_token(hook_id)
