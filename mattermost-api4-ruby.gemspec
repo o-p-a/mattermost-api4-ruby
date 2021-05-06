@@ -17,13 +17,13 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.13"
+  spec.add_development_dependency "bundler", "~> 2.2.15"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "github_changelog_generator"
 
-  spec.add_dependency "faraday", "~> 0.14"
-  spec.add_dependency "faraday_middleware", "~> 0.12"
+  spec.add_dependency "faraday", "~> 1.4.1"
+  spec.add_dependency "faraday_middleware", "~> 1.0.0"
   spec.add_dependency "httpclient", ">= 2.2"
   spec.add_dependency "faye-websocket", "~> 0.10"
   spec.add_dependency "event_emitter", "~> 0.2"
