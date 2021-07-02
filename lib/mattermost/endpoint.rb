@@ -4,6 +4,7 @@ require_relative 'endpoint/cluster'
 require_relative 'endpoint/commands'
 require_relative 'endpoint/compliance'
 require_relative 'endpoint/data_retention'
+require_relative 'endpoint/dialogs'
 require_relative 'endpoint/elasticsearch'
 require_relative 'endpoint/emoji'
 require_relative 'endpoint/files'
@@ -30,6 +31,7 @@ module Mattermost
 		include Commands
 		include Compliance
 		include DataRetention
+		include Dialogs
 		include Elasticsearch
 		include Emoji
 		include Files
