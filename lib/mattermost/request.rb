@@ -35,12 +35,13 @@ module Mattermost
 		private
 
 		def connection
-			Faraday::Connection.new({
+			Faraday.new({
 				:headers => self.headers,
 				:url => server
 			}) do |connection|
+				connection.request :json
 				connection.response :json
-				connection.adapter :httpclient
+				connection.adapter Faraday.default_adapter
 			end
 		end
 
