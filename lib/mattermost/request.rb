@@ -41,6 +41,7 @@ module Mattermost
 			}) do |connection|
 				connection.request :json
 				connection.response :json
+				connection.response :logger
 				connection.adapter Faraday.default_adapter
 			end
 		end
