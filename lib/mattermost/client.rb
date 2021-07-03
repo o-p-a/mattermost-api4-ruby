@@ -20,7 +20,7 @@ module Mattermost
 		def initialize(server)
 			self.server = URI.join(server, '/').to_s
 			self.subdir = URI(server).path
-			self.headers = {:Accept => "application/json"}
+			self.headers = {'Content-Type' => "application/json"}
 		end
 
 		def login(username, password)
