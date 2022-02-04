@@ -51,11 +51,10 @@ module Mattermost
 				get("/teams/#{team_id}/members")
 			end
 
-			def add_user_to_team(team_id, user_id, roles)
+			def add_user_to_team(team_id, user_id)
 				post("/teams/#{team_id}/members", :body => {
 					:team_id => team_id,
-					:user_id => user_id,
-					:roles => roles
+					:user_id => user_id
 				}.to_json)
 			end
 
