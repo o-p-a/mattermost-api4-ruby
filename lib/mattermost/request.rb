@@ -4,7 +4,6 @@ module Mattermost
 	module Request
 
 		def get(path, options = {}, &block)
-			puts "get #{path}, #{options}"
 			connection.send(:get) do |request|
 				request.url api(path), options
 			end
