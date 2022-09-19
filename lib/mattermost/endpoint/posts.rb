@@ -39,6 +39,10 @@ module Mattermost
 				get("/channels/#{channel_id}/posts")
 			end
 
+			def get_unread_posts_for_channel(channel_id, user_id, before = 0, after = 10)
+				get("/users/#{user_id}/channels/#{channel_id}/posts/unread?limit_before=#{before}&limit_after=#{after}")
+			end
+
 			def search_team_posts(team_id, terms, is_or_search = false)
 				post("/teams/#{team_id}/posts/search", :body => {
 					:terms => terms,
