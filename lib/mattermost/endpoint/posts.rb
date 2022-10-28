@@ -35,8 +35,9 @@ module Mattermost
 				get("/posts/#{post_id}/files/info")
 			end
 
-			def get_posts_for_channel(channel_id)
-				get("/channels/#{channel_id}/posts")
+			def get_posts_for_channel(channel_id, before = "")
+				query = before.present? ? "?before=#{before}" : ""
+				get("/channels/#{channel_id}/posts#{query}")
 			end
 
 			def get_unread_posts_for_channel(channel_id, user_id, before = 0, after = 10)
