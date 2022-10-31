@@ -35,8 +35,9 @@ module Mattermost
 				get("/posts/#{post_id}/files/info")
 			end
 
-			def get_posts_for_channel(channel_id, before = "")
-				query = before.present? ? "?before=#{before}" : ""
+			def get_posts_for_channel(channel_id, options = {})
+				joined_options = options.keys.map { |k| "#{k}=#{options[k]}" }.join("&")
+				query = joined_options.present? ? "?#{joined_options}" : ""
 				get("/channels/#{channel_id}/posts#{query}")
 			end
 
