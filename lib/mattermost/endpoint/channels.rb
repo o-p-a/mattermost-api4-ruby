@@ -35,6 +35,10 @@ module Mattermost
 				put("/channels/#{channel_id}/patch", :body => patch.to_json)
 			end
 
+			def update_channel_privacy(channel_id, privacy)
+				put("/channels/#{channel_id}/privacy", :body => {:privacy => privacy}.to_json)
+			end
+
 			def restore_channel(channel_id)
 				post("/channels/#{channel_id}/restore")
 			end
