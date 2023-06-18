@@ -1,5 +1,4 @@
 require 'faraday'
-require 'faraday/httpclient'
 
 module Mattermost
 	module Request
@@ -35,12 +34,12 @@ module Mattermost
 		private
 
 		def connection
-			Faraday::Connection.new({
+			Faraday.new({
 				:headers => self.headers,
 				:url => server
 			}) do |connection|
 				connection.response :json
-				connection.adapter :httpclient
+				connection.adapter Faraday.default_adapter
 			end
 		end
 

@@ -23,8 +23,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "github_changelog_generator", "~> 1.16"
 
   spec.add_dependency "faraday", "~> 2.7"
-  spec.add_dependency "faraday-httpclient", "~> 2.0"
-  spec.add_dependency "httpclient", "~> 2.8"
   spec.add_dependency "faye-websocket", "~> 0.11"
   spec.add_dependency "event_emitter", "~> 0.2"
 
