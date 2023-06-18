@@ -1,5 +1,5 @@
 require 'faraday'
-require 'faraday_middleware'
+require 'faraday/httpclient'
 
 module Mattermost
 	module Request
