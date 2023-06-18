@@ -35,8 +35,14 @@ module Mattermost
 				get("/posts/#{post_id}/files/info")
 			end
 
-			def get_posts_for_channel(channel_id)
-				get("/channels/#{channel_id}/posts")
+			def get_posts_for_channel(channel_id, options = {})
+				joined_options = options.keys.map { |k| "#{k}=#{options[k]}" }.join("&")
+				query = joined_options.present? ? "?#{joined_options}" : ""
+				get("/channels/#{channel_id}/posts#{query}")
+			end
+
+			def get_unread_posts_for_channel(channel_id, user_id, before = 0, after = 10)
+				get("/users/#{user_id}/channels/#{channel_id}/posts/unread?limit_before=#{before}&limit_after=#{after}")
 			end
 
 			def search_team_posts(team_id, terms, is_or_search = false)
