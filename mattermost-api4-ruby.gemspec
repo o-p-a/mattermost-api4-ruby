@@ -2,12 +2,12 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "mattermost-api4-ruby"
-  spec.version       = "0.0.10"
-  spec.authors       = ["Takayuki Maruyama"]
-  spec.email         = ["bis5.wsys@gmail.com"]
+  spec.version       = "0.0.101"
+  spec.authors       = ["Takayuki Maruyama", "opa"]
+  spec.email         = ["bis5.wsys@gmail.com", "mattermost-api4-ruby@opa.to"]
 
   spec.summary       = %q{Mattermost API v4 client for ruby}
-  spec.homepage      = "https://github.com/maruTA-bis5/mattermost-api4-ruby"
+  spec.homepage      = "https://github.com/o-p-a/mattermost-api4-ruby"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
@@ -20,12 +20,12 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.13"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "github_changelog_generator"
+  spec.add_development_dependency "github_changelog_generator", "~> 1.16"
 
-  spec.add_dependency "faraday", "~> 0.14"
-  spec.add_dependency "faraday_middleware", "~> 0.12"
-  spec.add_dependency "httpclient", ">= 2.2"
-  spec.add_dependency "faye-websocket", "~> 0.10"
+  spec.add_dependency "faraday", "~> 2.7"
+  spec.add_dependency "faraday-httpclient", "~> 2.0"
+  spec.add_dependency "httpclient", "~> 2.8"
+  spec.add_dependency "faye-websocket", "~> 0.11"
   spec.add_dependency "event_emitter", "~> 0.2"
 
 end
