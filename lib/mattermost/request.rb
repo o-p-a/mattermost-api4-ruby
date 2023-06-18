@@ -12,6 +12,8 @@ module Mattermost
 		def post(path, options = {}, &block)
 			connection.send(:post) do |request|
 				request.path = api(path)
+				request.params = options[:params] if options.key? :params
+				request["Content-Type"] = options[:content_type] if options.key? :content_type
 				request.body = options[:body] if options.key? :body
 			end
 		end

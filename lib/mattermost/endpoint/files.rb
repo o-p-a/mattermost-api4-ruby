@@ -5,8 +5,15 @@ module Mattermost
 		module Files
 
 			def upload_file(file, channel_id)
-				#post("/files, file)
-				raise NotImplementedError
+				options = {
+					params: {
+						channel_id: channel_id,
+						filename: file,
+					},
+					content_type: "application/octet-stream",
+					body: File.binread(file),
+				}
+				post("/files", options)
 			end
 
 			def get_file(file_id, file_name)
