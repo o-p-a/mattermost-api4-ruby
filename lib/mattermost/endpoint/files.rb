@@ -4,14 +4,14 @@ module Mattermost
 	module Endpoint
 		module Files
 
-			def upload_file(file, channel_id)
+			def upload_file(file, channel_id, filename:nil, filedata:nil)
 				options = {
 					params: {
 						channel_id: channel_id,
-						filename: file,
+						filename: filename || file,
 					},
 					content_type: "application/octet-stream",
-					body: File.binread(file),
+					body: filedata || File.binread(file),
 				}
 				post("/files", options)
 			end
